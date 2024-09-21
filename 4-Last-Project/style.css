@@ -1,0 +1,166 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+}
+
+
+nav.navbar.navbar-expand-lg.bg-body-tertiary.bg-dark {
+    background: transparent!important;
+    position: absolute;
+    z-index: 999;
+    width: 100%; /*Porque el position me tiro todo como si fuese un inlineblock*/
+}
+
+.navbar .botones a {
+	text-transform: uppercase;  /*convertir texto a mayusucla*/
+	font-size: 13px;
+	letter-spacing: 1px;
+	font-weight: 700;
+	border-radius: 5px;
+}
+
+
+a:hover {
+	text-decoration: none;
+}
+
+
+
+																																			/*
+																																			li:hover>a:before, .navbar .active:before {
+																																			    visibility: visible;
+																																			    width: 100%;
+																																			}
+
+																																			.navbar a, .navbar a:focus {
+																																			    display: flex;
+																																			    align-items: center;
+																																			    justify-content: space-between;
+																																			    padding: 0 3px;
+																																			    font-size: 14px;
+																																			    font-weight: 500;
+																																			    color: rgba(255, 255, 255, 0.6);
+																																			    text-transform: uppercase;
+																																			    white-space: nowrap;
+																																			    transition: 0.3s;
+																																			    position: relative;
+																																			}
+
+																																			.navbar>ul>li>a:before {
+																																			    content: "";
+																																			    position: absolute;
+																																			    width: 100%;
+																																			    height: 2px;
+																																			    bottom: -6px;
+																																			    left: 0;
+																																			    background-color: #ffc732;
+																																			    visibility: hidden;
+																																			    width: 0px;
+																																			    transition: all 0.3s ease-in-out 0s;
+																																			}
+
+*/
+
+
+.barra:after{
+	content: "";  /*agrega contenido desde el css*/
+	display: block;
+	background-color: #ffc107;
+	height: 2px;
+	width: 70px;
+	margin: 20px auto;  /*margin-y = 20px margin-x = centrado*/
+}
+
+
+.logo{
+	width: 80%;
+}
+
+
+
+.home {
+	background-image: url(img/slide3.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-color: #ddd;
+	height: 100vh; /*vh = height viewport (altura del dispositivo)*/
+	position: relative;
+}
+
+
+.section-container {
+	position: absolute;
+	color: white;
+	background-color: #0000008f;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.section-child {
+	width: 30%;
+	text-align: center;
+	padding: 0 20px;
+}
+
+
+.about {
+	background-color: #12131d;
+	color: #fff;
+}
+
+.icon-link {
+	color: #ffc107!important;
+	text-decoration-color: #ffc107;
+}
+
+.texto {
+	margin: 300px;
+	margin-top: 300px;
+}
+
+
+.precios {
+	background-color: #12131d;
+	color: #fff;
+}
+
+.precios p {
+	color: white!important;
+}
+
+.card-header {
+	background-color: #ffc107!important;
+}
+
+.btn-outline-primary {
+	color: #fff;
+}
+
+.boton-primario {
+	background-color: #ffc107!important;
+	border-color: #ffc107;
+}
+
+.btn:hover {
+	border-color: #12131d;
+}
+
+
+
+@media screen and (max-width: 360px) {
+	.navbar img {
+		width: 50%;
+	}
+}
+
+
+
