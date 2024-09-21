@@ -1,0 +1,6 @@
+/*ejemplo de que podemos usar nuestro propio estilo para pisar el del bootstrap cuando haya algo
+que querramos cambiar, o modificar, o agregar.*/
+
+.text-justify {
+	text-align: justify;
+}
