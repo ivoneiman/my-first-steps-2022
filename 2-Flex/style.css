@@ -1,0 +1,224 @@
+* {
+	box-sizing: border-box;   /*se usa SIEMPRE. que cuente los tamaños desde los bordes, no desde el contenido*/
+}
+
+body {
+	font-family: 'Roboto Slab', serif;
+	background-color: #383D3B;
+	margin: 0;
+	color: white;
+}
+
+.overlay {
+	background: #0000009a;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+	display: flex;
+	justify-content: center;  /*eje x*/
+	align-items: center;   /*eje y*/
+}
+
+.modal {
+	background-color: #FFF;
+	width: 300px;
+	height: 400px;
+	border-radius: 4px;
+	color: black;
+	padding: 30px;  /*si yo no pongo padding, el margin del h3 se escapa del padre*/
+	text-align: center;
+}
+
+.modal a {
+	color: red;
+
+}
+
+header {
+	height: 250px;
+	color: #FDFDFF;
+	background-color: #383D3B;
+	text-align: center;
+	padding-top: 40px;
+}
+
+h1 {
+	font-weight: normal;
+	margin: 0 0 20px;
+}
+
+.redes img {
+	width: 25px;   /*el alto lo toma automatico, es decir que no lo deforma al cambiarle el ancho*/
+	margin: 5px;
+}
+
+
+nav {
+	padding: 10px 0;  /*pading vertical, horizontal*/
+	text-align: center;
+	height: 60px;
+	background-color: #F2F4F3; /*linear-gradient(to bottom, #383D3B, #F2F4F3);*/ 
+}
+
+nav a {
+	color: #F2F4F3;
+	text-decoration: none;
+	background-color: #383D3B;
+	display: inline-block;  /*son un bloque para que funcione el alto, ancho etc, pero siguen estando en linea*/
+	height: 40px;
+	line-height: 40px;
+	padding: 0 15px;
+}
+
+nav a:hover {
+	background-color: #23455C;
+	transition-property: background;
+	transition: 0.6s;
+}
+
+
+/*reglas de secciones*/
+
+.servicios {
+	background-color: #383D3B;
+	padding: 0 40px;
+}
+
+.container {
+	width: 70%;
+	margin: 0 auto;
+	padding: 0 25px; /*para cuando achicamos a mobile queda mas prolijo*/
+}
+
+.col-servicios {
+	text-align: justify;
+	position: relative;  /*es para que tome el position y pueda usarlo de padre, aunque no haga nada*/
+}
+
+.col-servicios img {
+	width: 100%;
+}
+
+
+
+.nuevo {
+	background-color: #000;
+	color: #fff;
+	padding: 4px;
+	position: absolute;
+	transform: rotate(-45deg);  /*yo necesito que los padres de el div que quiero darle posicion tengan zindex para hacerlo en relación a sus anteriores, porque sino, lo hace en relación al body, y se va a la verga cuando queremos darle propiedades de posicionamiento*/
+	left: -10px;
+	top: 0;
+}
+
+.clientes{
+	background-color: #383D3B;
+	padding: 0 40px;
+}
+
+
+.marcas {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.marcas img{
+	width: 30%;
+}
+
+
+.contacto {
+	background-color: #5E503F;
+	background-image: url("img/fondo.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	/*background-position: right bottom;*/ 
+	padding: 40px 0;
+	height: 500px;
+	color: black;
+	font-weight: 500;
+	position: relative;  /*el relative lo define como padre*/
+}
+
+.circulo {
+	background: #000000bd;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%; /*circulo perfecto*/
+	position: absolute;
+	bottom: -60px;
+	left: 50%;
+	margin-left: -60px;  /*esto hace que quede centrado, pq sino arranca el circulo desde el medio, no que esté en el medio*/
+}
+
+footer {
+	margin: auto;  /* si no pongo margin queda separado */
+	text-align: center;
+	padding: 80px 0;
+}
+
+/*reglas media queries*/
+
+@media screen and (min-width: 680px){  /*es como un if el medio es una pantalla y el width es 680 entonces tal cosa*/
+	h1{
+		font-size: 2.5rem;
+	}
+	.fila-servicios{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;  /*para que se acomoden los textos y haya espacios entre medio*/
+	}
+
+	.col-servicios{
+		width: 48%;      /*esto es para que ponga en dos columnas*/
+
+	}
+
+	header {
+		display: flex;
+		text-align: left;
+		justify-content: space-between;
+		padding: 0 30px;
+		align-items: center;
+	}
+
+	.redes{
+		display: flex;
+		flex-direction: column;
+		z-index: 10;
+	}
+
+	.modal {
+		width: 700px;
+		height: 400px;
+	}
+}
+
+
+
+
+@media screen and (min-width: 980px){      /*espacio entre el and y la llave puede no aplicar los cambios*/
+	.col-servicios{
+		width: 23%;      /*esto es para que ponga en más columnas*/
+	}
+	.redes {
+		position: fixed;
+		right: 0;
+		top: 50%; /*top 50% toma como referencia el 100% del navegador*/
+		transform: translateY(-50%); /*cuando le pongo el 50% lo corre del eje Y, y queda en el medio*/ 
+		background-color: #000;
+		padding: 5px;
+	}
+}
+
+
+@media screen and (min-width: 500px){
+	.marcas img{
+		width: 10%;
+	}
+}
